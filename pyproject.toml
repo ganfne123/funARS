@@ -1,0 +1,58 @@
+[project]
+name = "funasr-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ganfen", email = "473243033@qq.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp>=3.13.2",
+    "beartype>=0.22.5",
+    "clearvoice>=0.1.2",
+    "demucs>=4.0.1",
+    "einops>=0.8.1",
+    "fastapi[standard]>=0.119.0",
+    "funasr>=1.2.7",
+    "funasr-onnx>=0.3.2",
+    "gradio>=5.49.1",
+    "huggingface-hub>=0.35.3",
+    "librosa>=0.10.2.post1",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.7",
+    "ml-collections>=1.1.0",
+    "modelscope>=1.30.0",
+    "moviepy>=2.2.1",
+    "omegaconf>=2.3.0",
+    "onnx==1.18",
+    "pandas>=2.3.3",
+    "pydantic>=2.11.10",
+    "pydub>=0.25.1",
+    "python-multipart>=0.0.20",
+    "rotary-embedding-torch>=0.8.3",
+    "scipy>=1.16.2",
+    "segmentation-models-pytorch>=0.5.0",
+    "soundfile==0.12.1",
+    "srt>=3.5.3",
+    "timm>=1.0.22",
+    "torch>=2.8.0",
+    "torchaudio>=2.8.0",
+    "tqdm>=4.67.1",
+    "uvicorn>=0.37.0",
+    "webrtcvad>=2.0.10",
+    "websockets>=15.0.1",
+    "yt-dlp>=2025.10.22",
+]
+
+[project.scripts]
+funasr-api = "funasr_api:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+# 当前项目以 FastAPI 应用方式运行，src 下暂未组织成可发布的
+# funasr_api Python 包，因此同步依赖时不构建和安装项目自身。
+package = false
